@@ -71,6 +71,33 @@
       padding: 72px 0 40px;
     }
 
+    .header-profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .header-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .profile-image {
+      width: 135px;
+      height: 135px;
+
+      flex-shrink: 0;
+
+      object-fit: cover;
+      object-position: center;
+
+      border-radius: 8px;
+      border: 1px solid var(--line);
+
+      background: #f5f5f5;
+    }
+
     h1 {
       margin: 0 0 5px;
 
@@ -437,6 +464,19 @@
         padding-top: 50px;
       }
 
+      .header-profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .profile-image {
+        order: -1;
+
+        width: 105px;
+        height: 105px;
+      }
+
       .research-header {
         flex-direction: column;
         gap: 2px;
@@ -468,47 +508,55 @@
 
   <header>
 
-    <div class="container">
+    <div class="container header-profile">
 
-      <h1>
-        Youngmin Jeong
-      </h1>
+      <div class="header-text">
 
-      <p class="position">
-        B.S. Student in Applied Artificial Intelligence
-      </p>
+        <h1>
+          Youngmin Jeong
+        </h1>
 
-      <p class="affiliation">
-        Seoul National University of Science and Technology (SeoulTech)
-        · Seoul, Korea
-        · Expected Mar. 2027
-      </p>
+        <p class="position">
+          B.S. Student in Applied Artificial Intelligence
+        </p>
 
-      <div class="top-links">
+        <p class="affiliation">
+          Seoul National University of Science and Technology (SeoulTech)
+          · Seoul, Korea
+          · Expected Mar. 2027
+        </p>
 
-        <a href="mailto:jym8253@seoultech.ac.kr">
-          Email
-        </a>
+        <div class="top-links">
 
-        <a
-          href="https://github.com/0YM0"
-          target="_blank"
-        >
-          GitHub
-        </a>
+          <a href="mailto:jym8253@seoultech.ac.kr">
+            Email
+          </a>
 
-        <!--
-        Put your CV file in:
-        assets/CV_JYM.pdf
-        -->
-        <a
-          href="assets/CV_JYM.pdf"
-          target="_blank"
-        >
-          CV
-        </a>
+          <a
+            href="https://github.com/0YM0"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="assets/CV_JYM.pdf"
+            target="_blank"
+          >
+            CV
+          </a>
+
+        </div>
 
       </div>
+
+
+      <img
+        src="assets/profile.jpg"
+        alt="Youngmin Jeong"
+        class="profile-image"
+      >
 
     </div>
 
@@ -635,9 +683,7 @@
       <div class="research-list">
 
 
-        <!-- =================================
-             FOUNDATION MODEL PROJECT
-        ================================== -->
+        <!-- FOUNDATION MODEL PROJECT -->
 
         <article class="research-item">
 
@@ -681,9 +727,7 @@
         </article>
 
 
-        <!-- =================================
-             NIER PROJECT
-        ================================== -->
+        <!-- NIER PROJECT -->
 
         <article class="research-item">
 
@@ -733,9 +777,7 @@
         </article>
 
 
-        <!-- =================================
-             RS-AUTOLABEL
-        ================================== -->
+        <!-- RS-AUTOLABEL -->
 
         <article class="research-item">
 
@@ -776,30 +818,12 @@
               Details →
             </a>
 
-            <!--
-            Add later if available:
-
-            <a href="YOUR_DEMO_LINK">
-              Demo →
-            </a>
-
-            <a href="YOUR_GITHUB_LINK">
-              Code →
-            </a>
-
-            <a href="assets/rs-autolabel-poster.pdf">
-              Poster →
-            </a>
-            -->
-
           </div>
 
         </article>
 
 
-        <!-- =================================
-             SPACE HACKATHON
-        ================================== -->
+        <!-- SPACE HACKATHON -->
 
         <article class="research-item">
 
@@ -1094,9 +1118,7 @@
       <div class="course-grid">
 
 
-        <!-- =====================
-             COURSE PROJECT 01
-        ====================== -->
+        <!-- COURSE PROJECT 01 -->
 
         <article class="course-card">
 
@@ -1128,20 +1150,12 @@
               Details →
             </a>
 
-            <!--
-            <a href="YOUR_GITHUB_LINK">
-              GitHub →
-            </a>
-            -->
-
           </div>
 
         </article>
 
 
-        <!-- =====================
-             COURSE PROJECT 02
-        ====================== -->
+        <!-- COURSE PROJECT 02 -->
 
         <article class="course-card">
 
@@ -1178,9 +1192,7 @@
         </article>
 
 
-        <!-- =====================
-             COURSE PROJECT 03
-        ====================== -->
+        <!-- COURSE PROJECT 03 -->
 
         <article class="course-card">
 
@@ -1248,6 +1260,7 @@
         <a
           href="https://github.com/0YM0"
           target="_blank"
+          rel="noopener"
         >
           GitHub
         </a>
