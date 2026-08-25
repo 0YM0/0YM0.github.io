@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Youngmin Jeong | Computer Vision Researcher</title>
+
+  <meta
+    name="description"
+    content="Youngmin Jeong — Computer Vision researcher working on visual perception, remote sensing, semantic segmentation, multimodal learning, and robot perception."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Youngmin Jeong | Computer Vision Researcher" />
+  <meta
+    property="og:description"
+    content="Research portfolio of Youngmin Jeong."
+  />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =====================================================
+       BASE
+    ====================================================== */
+
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f7f8fa;
+      --bg-card: #ffffff;
+
+      --text: #171717;
+      --text-soft: #5f6368;
+      --text-light: #858b94;
+
+      --border: #e8eaed;
+
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+
+      --max-width: 1040px;
+      --nav-height: 72px;
+
+      --radius: 14px;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #111318;
+      --bg-soft: #171a20;
+      --bg-card: #171a20;
+
+      --text: #f1f3f5;
+      --text-soft: #a9afb8;
+      --text-light: #777e88;
+
+      --border: #282c34;
+
+      --accent: #70a5ff;
+      --accent-soft: #18263d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    nav {
+      height: var(--nav-height);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      width: calc(100% - 40px);
+      height: 100%;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.4px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-soft);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      color: var(--text);
+      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 15px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+      padding: 100px 0 95px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      gap: 85px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(42px, 7vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -2.6px;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 21px;
+      color: var(--text-soft);
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      max-width: 640px;
+      font-size: 16px;
+      color: var(--text-soft);
+    }
+
+    .hero-description strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-links {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .btn {
+      height: 42px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 17px;
+
+      border-radius: 8px;
+      border: 1px solid var(--border);
+
+      font-size: 14px;
+      font-weight: 600;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        border 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--text-light);
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+    }
+
+    .profile-wrap {
+      position: relative;
+    }
+
+    .profile-image {
+      width: 270px;
+      height: 320px;
+
+      object-fit: cover;
+      object-position: center;
+
+      border-radius: 18px;
+      border: 1px solid var(--border);
+
+      background: var(--bg-soft);
+    }
+
+
+    /* =====================================================
+       COMMON SECTION
+    ====================================================== */
+
+    section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .section-number {
+      color: var(--text-light);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+      font-size: 30px;
+      letter-spacing: -1px;
+      line-height: 1.25;
+    }
+
+    .section-description {
+      color: var(--text-soft);
+      max-width: 650px;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+
+    /* =====================================================
+       RESEARCH INTERESTS
+    ====================================================== */
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .interest {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .interest-index {
+      display: block;
+      color: var(--text-light);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .interest h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .interest p {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       SELECTED RESEARCH
+    ====================================================== */
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 43% 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .project-image-wrap {
+      aspect-ratio: 16 / 10;
+      background: var(--bg-soft);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      overflow: hidden;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition: transform 0.25s ease;
+    }
+
+    .project:hover .project-image {
+      transform: scale(1.018);
+    }
+
+    .project-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .project-title {
+      font-family: "Manrope", sans-serif;
+      font-size: 23px;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .project-description {
+      color: var(--text-soft);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 17px;
+    }
+
+    .tag {
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+
+      font-size: 11px;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .text-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+
+    /* =====================================================
+       PUBLICATIONS
+    ====================================================== */
+
+    .publication-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .publication {
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 25px;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .publication:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .pub-year {
+      color: var(--text-light);
+      font-size: 13px;
+      font-weight: 500;
+      padding-top: 3px;
+    }
+
+    .pub-title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .pub-venue {
+      margin-top: 3px;
+    }
+
+    .me {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .pub-links {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .pub-button {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+
+      padding: 5px 9px;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      white-space: nowrap;
+    }
+
+    .pub-button:hover {
+      border-color: var(--text-light);
+    }
+
+    .status {
+      display: inline-block;
+      margin-left: 6px;
+
+      padding: 2px 7px;
+      border-radius: 5px;
+
+      background: var(--accent-soft);
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      vertical-align: middle;
+    }
+
+
+    /* =====================================================
+       EXPERIENCE
+    ====================================================== */
+
+    .timeline {
+      max-width: 830px;
+      margin-left: auto;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 155px 1fr;
+      gap: 35px;
+
+      padding: 0 0 37px;
+    }
+
+    .timeline-date {
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    .timeline-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .timeline-place {
+      color: var(--text-soft);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .timeline-desc {
+      margin-top: 9px;
+      color: var(--text-soft);
+      font-size: 13px;
+      max-width: 650px;
+    }
+
+
+    /* =====================================================
+       AWARDS
+    ====================================================== */
+
+    .award-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .award {
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+
+      background: var(--bg-card);
+    }
+
+    .award-year {
+      color: var(--text-light);
+      font-size: 11px;
+      margin-bottom: 7px;
+    }
+
+    .award-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .award-org {
+      color: var(--text-soft);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
+
+    .contact {
+      padding-bottom: 110px;
+    }
+
+    .contact-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      padding: 45px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .contact-title {
+      font-family: "Manrope", sans-serif;
+      font-size: 26px;
+      margin-bottom: 7px;
+    }
+
+    .contact-text {
+      color: var(--text-soft);
+      font-size: 14px;
+      max-width: 590px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 35px;
+
+      color: var(--text-light);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 850px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .profile-wrap {
+        order: -1;
+      }
+
+      .profile-image {
+        width: 180px;
+        height: 210px;
+      }
+
+      .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 70px 1fr;
+      }
+
+      .pub-links {
+        grid-column: 2;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .container,
+      .nav-container {
+        width: calc(100% - 30px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0 70px;
+      }
+
+      h1 {
+        letter-spacing: -1.7px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .pub-links {
+        grid-column: 1;
+        margin-top: 7px;
+      }
+
+      .timeline {
+        margin-left: 0;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .award-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================================================
+       NAV
+  ==================================================== -->
+
+  <nav>
+    <div class="nav-container">
+
+      <a class="logo" href="#">
+        YJ.
+      </a>
+
+      <div class="nav-right">
+
+        <ul class="nav-links">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#awards">Awards</a></li>
+        </ul>
+
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          ◐
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===================================================
+       HERO
+  ==================================================== -->
+
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+
+        <p class="eyebrow">
+          Computer Vision Researcher
+        </p>
+
+        <h1>
+          Youngmin<br>
+          Jeong
+        </h1>
+
+        <p class="hero-subtitle">
+          Visual Perception · Multimodal Learning · Robot Vision
+        </p>
+
+        <p class="hero-description">
+          I am an undergraduate researcher in
+          <strong>Applied Artificial Intelligence</strong> at
+          Seoul National University of Science and Technology.
+
+          My research focuses on building visual perception systems
+          that understand complex real-world environments, with
+          experience in <strong>semantic segmentation</strong>,
+          <strong>remote sensing</strong>, and
+          <strong>multimodal visual understanding</strong>.
+
+          I am currently expanding my research toward
+          <strong>robot perception and embodied vision</strong>.
+        </p>
+
+        <div class="hero-links">
+
+          <!-- Change these links -->
+          <a
+            href="assets/Youngmin_Jeong_CV.pdf"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            CV
+          </a>
+
+          <a
+            href="https://github.com/YOUR_GITHUB_ID"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://scholar.google.com/"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            Scholar
+          </a>
+
+          <a
+            href="mailto:YOUR_EMAIL"
+            class="btn btn-secondary"
+          >
+            Email
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-wrap">
+
+        <!--
+          Replace with your profile image:
+          assets/profile.jpg
+        -->
+
+        <img
+          src="assets/profile.jpg"
+          alt="Youngmin Jeong"
+          class="profile-image"
+        >
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ===================================================
+       RESEARCH INTERESTS
+  ==================================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-number">
+          01
+        </span>
+
+        <div>
+
+          <h2 class="section-title">
+            Research Interests
+          </h2>
+
+          <p class="section-description">
+            I am interested in visual perception systems that can
+            robustly understand real-world environments using visual
+            and multimodal information.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="interest-grid">
+
+        <article class="interest">
+          <span class="interest-index">01</span>
+
+          <h3>Computer Vision</h3>
+
+          <p>
+            Visual recognition, representation learning,
+            segmentation, and scene understanding.
+          </p>
+        </article>
+
+
+        <article class="interest">
+          <span class="interest-index">02</span>
+
+          <h3>Multimodal Perception</h3>
+
+          <p>
+            Vision-language models and auxiliary modalities
+            for improved visual understanding.
+          </p>
+        </article>
+
+
+        <article class="interest">
+          <span class="interest-index">03</span>
+
+          <h3>Remote Sensing</h3>
+
+          <p>
+            Large-scale satellite imagery analysis,
+            semantic segmentation, and geospatial perception.
+          </p>
+        </article>
+
+
+        <article class="interest">
+          <span class="interest-index">04</span>
+
+          <h3>Robot Perception</h3>
+
+          <p>
+            Visual perception and scene understanding
+            for robotic interaction and manipulation.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       SELECTED RESEARCH
+  ==================================================== -->
+
+  <section id="research">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-number">
+          02
+        </span>
+
+        <div>
+
+          <h2 class="section-title">
+            Selected Research
+          </h2>
+
+          <p class="section-description">
+            Selected research projects in visual perception,
+            remote sensing, and multimodal scene understanding.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project">
+
+          <div class="project-image-wrap">
+            <img
+              src="assets/projects/autolabel.jpg"
+              class="project-image"
+              alt="RS Auto Labeling"
+            >
+          </div>
+
+
+          <div>
+
+            <div class="project-meta">
+              Interactive Vision System · 2025–2026
+            </div>
+
+            <h3 class="project-title">
+              Training-Free Interactive Auto-Labeling
+              for Remote Sensing Imagery
+            </h3>
+
+            <p class="project-description">
+              An interactive annotation framework integrating
+              open-vocabulary segmentation and promptable foundation
+              models. The system enables users to specify novel
+              objects with text or visual exemplars and generates
+              editable polygon annotations without task-specific
+              retraining.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">Open-Vocabulary Segmentation</span>
+              <span class="tag">SAM</span>
+              <span class="tag">VLM</span>
+              <span class="tag">Remote Sensing</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" class="text-link">Project →</a>
+              <a href="#" class="text-link">Code →</a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project">
+
+          <div class="project-image-wrap">
+            <img
+              src="assets/projects/barn.jpg"
+              class="project-image"
+              alt="Satellite Barn Detection"
+            >
+          </div>
+
+
+          <div>
+
+            <div class="project-meta">
+              Semantic Segmentation · 2024–2026
+            </div>
+
+            <h3 class="project-title">
+              Large-Scale Barn Detection
+              from High-Resolution Satellite Imagery
+            </h3>
+
+            <p class="project-description">
+              A large-scale semantic segmentation pipeline for
+              detecting livestock facilities from high-resolution
+              satellite imagery. The work covers data construction,
+              preprocessing of multi-terabyte geospatial imagery,
+              model development, post-processing, and geographic
+              information extraction.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">Semantic Segmentation</span>
+              <span class="tag">Satellite Imagery</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">MMSegmentation</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" class="text-link">Paper →</a>
+              <a href="#" class="text-link">Code →</a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project">
+
+          <div class="project-image-wrap">
+            <img
+              src="assets/projects/graph.jpg"
+              class="project-image"
+              alt="Graph Guided Visual Perception"
+            >
+          </div>
+
+
+          <div>
+
+            <div class="project-meta">
+              Multimodal Scene Understanding · 2025–2026
+            </div>
+
+            <h3 class="project-title">
+              Context-Aware Visual Perception
+              with Geospatial Graphs
+            </h3>
+
+            <p class="project-description">
+              Exploring how structured geographic context can
+              complement RGB imagery for visual recognition.
+              Land-cover relationships are modeled as graphs and
+              fused with visual representations to improve semantic
+              segmentation under ambiguous visual appearance.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">Graph Neural Networks</span>
+              <span class="tag">Multimodal Learning</span>
+              <span class="tag">Scene Context</span>
+              <span class="tag">Semantic Segmentation</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" class="text-link">Project →</a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       PUBLICATIONS
+  ==================================================== -->
+
+  <section id="publications">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-number">
+          03
+        </span>
+
+        <div>
+
+          <h2 class="section-title">
+            Publications
+          </h2>
+
+          <p class="section-description">
+            Research publications and manuscripts.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="publication-list">
+
+
+        <article class="publication">
+
+          <div class="pub-year">
+            2026
+          </div>
+
+          <div>
+
+            <div class="pub-title">
+              A Deep Semantic Segmentation System for
+              Detecting Multi-Scale Barns from
+              High-Resolution Satellite Imagery
+
+              <span class="status">
+                Under Review
+              </span>
+            </div>
+
+            <div class="pub-authors">
+              <span class="me">Youngmin Jeong</span>,
+              et al.
+            </div>
+
+            <div class="pub-venue">
+              IEEE Journal of Selected Topics in Applied Earth
+              Observations and Remote Sensing
+            </div>
+
+          </div>
+
+          <div class="pub-links">
+            <a href="#" class="pub-button">
+              Project
+            </a>
+          </div>
+
+        </article>
+
+
+
+        <article class="publication">
+
+          <div class="pub-year">
+            2026
+          </div>
+
+          <div>
+
+            <div class="pub-title">
+              GLCFormer
+            </div>
+
+            <div class="pub-authors">
+              <span class="me">Youngmin Jeong</span>,
+              et al.
+            </div>
+
+            <div class="pub-venue">
+              IEIE Summer Conference, 2026
+            </div>
+
+          </div>
+
+          <div class="pub-links">
+
+            <a href="#" class="pub-button">
+              PDF
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="publication">
+
+          <div class="pub-year">
+            2025
+          </div>
+
+          <div>
+
+            <div class="pub-title">
+              DualLCFormer
+            </div>
+
+            <div class="pub-authors">
+              <span class="me">Youngmin Jeong</span>,
+              et al.
+            </div>
+
+            <div class="pub-venue">
+              IEIE Summer Conference, 2025
+            </div>
+
+          </div>
+
+          <div class="pub-links">
+
+            <a href="#" class="pub-button">
+              PDF
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       EXPERIENCE
+  ==================================================== -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-number">
+          04
+        </span>
+
+        <div>
+
+          <h2 class="section-title">
+            Research Experience
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            Oct. 2024 — Present
+          </div>
+
+          <div>
+
+            <div class="timeline-title">
+              Undergraduate Researcher
+            </div>
+
+            <div class="timeline-place">
+              IPAL Lab · Seoul National University of
+              Science and Technology
+            </div>
+
+            <p class="timeline-desc">
+              Research on computer vision and remote sensing,
+              including semantic segmentation, multimodal
+              perception, large-scale satellite image analysis,
+              and foundation-model-based annotation systems.
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            Jun. 2024 — Nov. 2025
+          </div>
+
+          <div>
+
+            <div class="timeline-title">
+              Satellite-Based Environmental Monitoring Project
+            </div>
+
+            <div class="timeline-place">
+              Research Project
+            </div>
+
+            <p class="timeline-desc">
+              Developed a large-scale pipeline for livestock facility
+              detection using high-resolution satellite imagery,
+              covering dataset construction, deep learning models,
+              evaluation, geospatial post-processing, and
+              address-level result generation.
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            May 2021 — Feb. 2023
+          </div>
+
+          <div>
+
+            <div class="timeline-title">
+              Undergraduate Researcher
+            </div>
+
+            <div class="timeline-place">
+              AIR Lab
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       AWARDS
+  ==================================================== -->
+
+  <section id="awards">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-number">
+          05
+        </span>
+
+        <div>
+
+          <h2 class="section-title">
+            Selected Awards
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="award-list">
+
+
+        <article class="award">
+
+          <div class="award-year">
+            2026
+          </div>
+
+          <div class="award-title">
+            Capstone Design Director's Award
+          </div>
+
+          <div class="award-org">
+            Seoul National University of Science and Technology
+          </div>
+
+        </article>
+
+
+        <article class="award">
+
+          <div class="award-year">
+            2026
+          </div>
+
+          <div class="award-title">
+            3rd Place · Early-Career Remote Sensing Competition
+          </div>
+
+          <div class="award-org">
+            Remote Sensing Research Competition
+          </div>
+
+        </article>
+
+
+        <article class="award">
+
+          <div class="award-year">
+            2025
+          </div>
+
+          <div class="award-title">
+            Excellence Award · Space Hackathon
+          </div>
+
+          <div class="award-org">
+            Korea Aerospace Research Institute
+          </div>
+
+        </article>
+
+
+        <article class="award">
+
+          <div class="award-year">
+            2021 — Present
+          </div>
+
+          <div class="award-title">
+            AIS Scholarship
+          </div>
+
+          <div class="award-org">
+            Full Tuition Scholarship
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       CONTACT
+  ==================================================== -->
+
+  <section class="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div>
+
+          <h2 class="contact-title">
+            Let's connect.
+          </h2>
+
+          <p class="contact-text">
+            I am always interested in discussing research on
+            computer vision, multimodal perception,
+            remote sensing, and robot vision.
+          </p>
+
+        </div>
+
+
+        <a
+          href="mailto:YOUR_EMAIL"
+          class="btn btn-primary"
+        >
+          Email me
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <span>
+        © <span id="year"></span> Youngmin Jeong
+      </span>
+
+      <span>
+        Built with HTML & CSS · Hosted on GitHub Pages
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ===================================================
+       JAVASCRIPT
+  ==================================================== -->
+
+  <script>
+
+    /* Current year */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* Dark mode */
+
+    const toggle = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+
+    const savedTheme =
+      localStorage.getItem("theme");
+
+    if (savedTheme) {
+
+      html.setAttribute(
+        "data-theme",
+        savedTheme
+      );
+
+    }
+
+    toggle.addEventListener("click", () => {
+
+      const current =
+        html.getAttribute("data-theme");
+
+      const next =
+        current === "dark"
+        ? "light"
+        : "dark";
+
+      html.setAttribute(
+        "data-theme",
+        next
+      );
+
+      localStorage.setItem(
+        "theme",
+        next
+      );
+
+    });
+
+  </script>
+
+</body>
+</html>
