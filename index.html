@@ -506,6 +506,62 @@
 
     }
 
+
+    /* =========================
+       IMAGE LIGHTBOX
+    ========================= */
+
+    .zoomable {
+      cursor: zoom-in;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px;
+
+      background: rgba(0, 0, 0, 0.85);
+
+      z-index: 9999;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: 92vw;
+      max-height: 90vh;
+
+      object-fit: contain;
+
+      background: #ffffff;
+      border-radius: 6px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 26px;
+
+      padding: 0;
+
+      border: 0;
+      background: transparent;
+
+      color: #ffffff;
+
+      font-size: 34px;
+      line-height: 1;
+
+      cursor: pointer;
+    }
+
   </style>
 
 </head>
@@ -685,7 +741,7 @@
           <img
             src="assets/thumbnails/foundation-model.jpg"
             alt="Satellite Imagery Foundation Model Project"
-            class="project-thumbnail"
+            class="project-thumbnail zoomable"
           >
 
           <div class="project-content">
@@ -733,7 +789,7 @@
           <img
             src="assets/thumbnails/livestock-detection.jpg"
             alt="Livestock Facility Detection Project"
-            class="project-thumbnail"
+            class="project-thumbnail zoomable"
           >
 
           <div class="project-content">
@@ -781,7 +837,7 @@
           <img
             src="assets/thumbnails/rs-autolabel.jpg"
             alt="RS-AutoLabel"
-            class="project-thumbnail"
+            class="project-thumbnail zoomable"
           >
 
           <div class="project-content">
@@ -829,7 +885,7 @@
           <img
             src="assets/thumbnails/vlm-labeling.jpg"
             alt="VLM-Based Interactive Object Labeling"
-            class="project-thumbnail"
+            class="project-thumbnail zoomable"
           >
 
           <div class="project-content">
@@ -900,7 +956,7 @@
           <img
             src="assets/thumbnails/jstars.jpg"
             alt="J-STARS Barn Detection"
-            class="publication-thumbnail"
+            class="publication-thumbnail zoomable"
           >
 
           <div class="publication-content">
@@ -943,7 +999,7 @@
           <img
             src="assets/thumbnails/glcformer.jpg"
             alt="GLCFormer"
-            class="publication-thumbnail"
+            class="publication-thumbnail zoomable"
           >
 
           <div class="publication-content">
@@ -981,7 +1037,7 @@
           <img
             src="assets/thumbnails/heterobarnmapper.jpg"
             alt="HeteroBarnMapper"
-            class="publication-thumbnail"
+            class="publication-thumbnail zoomable"
           >
 
           <div class="publication-content">
@@ -1039,7 +1095,7 @@
           <img
             src="assets/thumbnails/duallcformer.jpg"
             alt="DualLCFormer"
-            class="publication-thumbnail"
+            class="publication-thumbnail zoomable"
           >
 
           <div class="publication-content">
@@ -1090,7 +1146,7 @@
           <img
             src="assets/thumbnails/lcz.jpg"
             alt="Landsat 9 Local Climate Zone Mapping"
-            class="publication-thumbnail"
+            class="publication-thumbnail zoomable"
           >
 
           <div class="publication-content">
@@ -1175,6 +1231,96 @@
     </div>
 
   </footer>
+
+
+  <!-- =========================
+       IMAGE LIGHTBOX
+  ========================= -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightbox-close"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      class="lightbox-image"
+      id="lightbox-image"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+  <script>
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+
+    document.querySelectorAll(".zoomable").forEach((image) => {
+
+      image.addEventListener("click", () => {
+
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove("active");
+
+      lightboxImage.src = "";
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+
+    lightbox.addEventListener("click", (event) => {
+
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains("active")
+      ) {
+        closeLightbox();
+      }
+
+    });
+
+  </script>
 
 
 </body>
