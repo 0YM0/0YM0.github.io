@@ -13,6 +13,7 @@
   />
 
   <style>
+
     :root {
       --text: #222222;
       --muted: #666666;
@@ -20,7 +21,8 @@
       --line: #e8e8e8;
       --link: #2563eb;
       --background: #ffffff;
-      --max-width: 820px;
+      --card-background: #ffffff;
+      --max-width: 900px;
     }
 
     * {
@@ -62,6 +64,7 @@
       width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
+
 
     /* =========================
        HEADER
@@ -131,6 +134,7 @@
       font-weight: 500;
     }
 
+
     /* =========================
        NAVIGATION
     ========================= */
@@ -160,18 +164,18 @@
       text-decoration: none;
     }
 
+
     /* =========================
        COMMON
     ========================= */
 
     section {
       padding: 44px 0;
-
       border-bottom: 1px solid var(--line);
     }
 
     h2 {
-      margin: 0 0 18px;
+      margin: 0 0 22px;
 
       font-size: 22px;
       line-height: 1.3;
@@ -180,9 +184,7 @@
 
     h3 {
       margin: 0;
-
-      font-size: 16px;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     p {
@@ -192,6 +194,7 @@
     .muted {
       color: var(--muted);
     }
+
 
     /* =========================
        ABOUT
@@ -220,43 +223,53 @@
       font-size: 12.5px;
     }
 
+
     /* =========================
-       RESEARCH
+       RESEARCH & PROJECTS
     ========================= */
 
-    .research-list {
-      margin-top: 20px;
-
-      border-top: 1px solid var(--line);
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
-    .research-item {
-      padding: 22px 0;
+    .project-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
 
-      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--card-background);
     }
 
-    .research-header {
+    .project-thumbnail {
+      width: 100%;
+      height: 100%;
+      min-height: 155px;
+
+      object-fit: cover;
+
+      background: #f5f5f5;
+    }
+
+    .project-content {
+      padding: 18px 20px;
+    }
+
+    .project-top {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
 
-      gap: 22px;
+      gap: 18px;
     }
 
-    .date {
-      flex-shrink: 0;
-
-      color: var(--light);
-
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .category {
-      display: inline-block;
-
-      margin-right: 7px;
+    .project-category {
+      margin-bottom: 4px;
 
       color: var(--light);
 
@@ -264,74 +277,115 @@
       font-weight: 600;
 
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
 
-    .research-meta {
-      margin-top: 4px;
+    .project-card h3 {
+      font-size: 15.5px;
+      font-weight: 650;
+    }
+
+    .project-date {
+      flex-shrink: 0;
+
+      color: var(--light);
+
+      font-size: 11.5px;
+      white-space: nowrap;
+    }
+
+    .project-meta {
+      margin-top: 5px;
 
       color: var(--muted);
 
-      font-size: 12.5px;
+      font-size: 12.3px;
     }
 
-    .research-description {
-      max-width: 740px;
-
+    .project-description {
       margin: 9px 0 0;
 
       color: #555555;
 
-      font-size: 13.5px;
+      font-size: 13px;
+      line-height: 1.55;
     }
 
-    .links {
+    .project-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
 
-      margin-top: 9px;
+      margin-top: 10px;
 
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 500;
     }
+
 
     /* =========================
        PUBLICATIONS
     ========================= */
 
     .publication-list {
-      margin-top: 20px;
-
-      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .publication {
-      padding: 18px 0;
+    .publication-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
 
-      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 9px;
+
+      background: var(--card-background);
+    }
+
+    .publication-thumbnail {
+      width: 100%;
+      height: 100%;
+      min-height: 125px;
+
+      object-fit: cover;
+
+      background: #f5f5f5;
+    }
+
+    .publication-content {
+      padding: 15px 18px;
     }
 
     .pub-title {
       font-size: 14.5px;
-      font-weight: 600;
-
-      line-height: 1.55;
+      font-weight: 650;
+      line-height: 1.45;
     }
 
-    .pub-authors,
+    .pub-authors {
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 12.3px;
+      line-height: 1.5;
+    }
+
     .pub-venue {
       margin-top: 3px;
 
       color: var(--muted);
 
-      font-size: 12.8px;
-      line-height: 1.55;
+      font-size: 12.3px;
+      line-height: 1.5;
     }
 
     .me {
       color: #333333;
-      font-weight: 600;
+      font-weight: 650;
     }
 
     .badge {
@@ -351,13 +405,25 @@
       vertical-align: 2px;
     }
 
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+
+      margin-top: 8px;
+
+      font-size: 11.8px;
+      font-weight: 500;
+    }
+
     .publication-note {
-      margin-top: 12px;
+      margin-top: 14px;
 
       color: var(--light);
 
       font-size: 11.5px;
     }
+
 
     /* =========================
        COURSE PROJECTS
@@ -367,42 +433,44 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
-      gap: 12px;
-
-      margin-top: 20px;
+      gap: 14px;
     }
 
     .course-card {
-      display: flex;
-      flex-direction: column;
-
-      min-height: 210px;
-
-      padding: 17px;
+      overflow: hidden;
 
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 9px;
+
+      background: var(--card-background);
     }
 
-    .course-index {
-      margin-bottom: 20px;
+    .course-thumbnail {
+      width: 100%;
+      aspect-ratio: 16 / 10;
 
-      color: #aaaaaa;
+      display: block;
 
-      font-size: 10.5px;
-      font-weight: 600;
+      object-fit: cover;
 
-      letter-spacing: 0.4px;
+      background: #f5f5f5;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .course-content {
+      padding: 14px 15px 16px;
     }
 
     .course-card h3 {
-      margin-bottom: 4px;
+      margin: 0;
 
       font-size: 14.5px;
+      line-height: 1.45;
     }
 
     .course-name {
-      margin-bottom: 9px;
+      margin-top: 4px;
 
       color: var(--light);
 
@@ -410,30 +478,18 @@
     }
 
     .course-description {
-      flex: 1;
-
-      margin: 0;
+      margin: 8px 0 0;
 
       color: var(--muted);
 
-      font-size: 12.5px;
+      font-size: 12.3px;
       line-height: 1.55;
-    }
-
-    .course-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-
-      margin-top: 14px;
-
-      font-size: 11.5px;
-      font-weight: 500;
     }
 
     .placeholder {
       color: #999999;
     }
+
 
     /* =========================
        FOOTER
@@ -454,11 +510,12 @@
       gap: 20px;
     }
 
+
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 680px) {
+    @media (max-width: 720px) {
 
       header {
         padding-top: 50px;
@@ -477,17 +534,25 @@
         height: 105px;
       }
 
-      .research-header {
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-thumbnail {
+        height: 190px;
+      }
+
+      .project-top {
         flex-direction: column;
-        gap: 2px;
+        gap: 4px;
+      }
+
+      .publication-card {
+        grid-template-columns: 120px 1fr;
       }
 
       .course-grid {
         grid-template-columns: 1fr;
-      }
-
-      .course-card {
-        min-height: auto;
       }
 
       .footer-row {
@@ -496,11 +561,25 @@
       }
     }
 
+
+    @media (max-width: 520px) {
+
+      .publication-card {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-thumbnail {
+        height: 180px;
+      }
+
+    }
+
   </style>
 </head>
 
 
 <body>
+
 
   <!-- =========================
        HEADER
@@ -576,7 +655,7 @@
       </a>
 
       <a href="#research">
-        Research
+        Research & Projects
       </a>
 
       <a href="#publications">
@@ -595,17 +674,17 @@
   <!-- =========================
        ABOUT
   ========================= -->
-  
+
   <section id="about">
-  
+
     <div class="container">
-  
+
       <h2>
         👋 About Me
       </h2>
-  
+
       <div class="about">
-  
+
         <p>
           I am a B.S. student in Applied Artificial Intelligence at
           Seoul National University of Science and Technology (SeoulTech).
@@ -613,7 +692,7 @@
           <strong>computer vision, robot vision, and visual perception</strong>,
           particularly in multi-modal learning and vision-language models.
         </p>
-  
+
         <p>
           My research experience has focused on
           <strong>visual perception and multi-modal learning</strong>,
@@ -621,36 +700,36 @@
           I am currently interested in extending my research toward
           <strong>robot vision</strong>.
         </p>
-  
+
       </div>
-  
-  
+
+
       <div class="interests">
-  
+
         <span class="interest">
           Computer Vision
         </span>
-  
+
         <span class="interest">
           Robot Vision
         </span>
-  
+
         <span class="interest">
           Visual Perception
         </span>
-  
+
         <span class="interest">
           Multi-modal Learning
         </span>
-  
+
         <span class="interest">
           Vision-Language Models
         </span>
-  
+
       </div>
-  
+
     </div>
-  
+
   </section>
 
 
@@ -666,193 +745,232 @@
         🔬 Research & Projects
       </h2>
 
-      <p class="muted">
-        Selected research with additional context and resources beyond my CV.
-      </p>
 
-
-      <div class="research-list">
+      <div class="project-list">
 
 
         <!-- FOUNDATION MODEL PROJECT -->
 
-        <article class="research-item">
+        <article class="project-card">
 
-          <div class="research-header">
+          <img
+            src="assets/thumbnails/foundation-model.jpg"
+            alt="Satellite Imagery Foundation Model Project"
+            class="project-thumbnail"
+          >
 
-            <h3>
-              <span class="category">
-                Research Project
+          <div class="project-content">
+
+            <div class="project-top">
+
+              <div>
+
+                <div class="project-category">
+                  Research Project
+                </div>
+
+                <h3>
+                  Dataset Construction and Management for Training
+                  Satellite Imagery Foundation Models
+                </h3>
+
+              </div>
+
+              <span class="project-date">
+                Mar. 2026 — Present
               </span>
 
-              Dataset Construction and Management for Training
-              Satellite Imagery Foundation Models
-            </h3>
+            </div>
 
-            <span class="date">
-              Mar. 2026 — Present
-            </span>
+            <div class="project-meta">
+              Korean Society for Aeronautical and Space Sciences (KSAS)
+            </div>
 
-          </div>
+            <p class="project-description">
+              Multi-source satellite dataset construction and
+              foundation model implementation and evaluation.
+            </p>
 
+            <div class="project-links">
 
-          <div class="research-meta">
-            Korean Society for Aeronautical and Space Sciences (KSAS)
-          </div>
+              <a href="projects/foundation-model.html">
+                Details →
+              </a>
 
-
-          <p class="research-description">
-            Foundation model implementation and evaluation using
-            curated multi-source satellite imagery datasets.
-          </p>
-
-
-          <div class="links">
-
-            <a href="projects/foundation-model.html">
-              Details →
-            </a>
+            </div>
 
           </div>
 
         </article>
+
 
 
         <!-- NIER PROJECT -->
 
-        <article class="research-item">
+        <article class="project-card">
 
-          <div class="research-header">
+          <img
+            src="assets/thumbnails/livestock-detection.jpg"
+            alt="Livestock Facility Detection Project"
+            class="project-thumbnail"
+          >
 
-            <h3>
-              <span class="category">
-                Research Project
+          <div class="project-content">
+
+            <div class="project-top">
+
+              <div>
+
+                <div class="project-category">
+                  Research Project
+                </div>
+
+                <h3>
+                  Development of Monitoring Methods for
+                  Livestock Facility Detection
+                </h3>
+
+              </div>
+
+              <span class="project-date">
+                Nov. 2024 — Nov. 2025
               </span>
 
-              Development of Monitoring Methods
-              for Livestock Facility Detection
-            </h3>
+            </div>
 
-            <span class="date">
-              Nov. 2024 — Nov. 2025
-            </span>
+            <div class="project-meta">
+              National Institute of Environmental Research (NIER)
+            </div>
 
-          </div>
+            <p class="project-description">
+              End-to-end livestock facility detection from
+              high-resolution satellite imagery.
+            </p>
 
+            <div class="project-links">
 
-          <div class="research-meta">
-            National Institute of Environmental Research (NIER)
-          </div>
+              <a href="projects/livestock-detection.html">
+                Details →
+              </a>
 
+              <a href="#publications">
+                Publications →
+              </a>
 
-          <p class="research-description">
-            Led model development and extensive experimentation
-            for an end-to-end livestock facility detection pipeline,
-            including post-processing, object-level evaluation,
-            and field validation.
-          </p>
-
-
-          <div class="links">
-
-            <a href="projects/livestock-detection.html">
-              Details →
-            </a>
-
-            <a href="#publications">
-              Related Publications →
-            </a>
+            </div>
 
           </div>
 
         </article>
+
 
 
         <!-- RS-AUTOLABEL -->
 
-        <article class="research-item">
+        <article class="project-card">
 
-          <div class="research-header">
+          <img
+            src="assets/thumbnails/rs-autolabel.jpg"
+            alt="RS-AutoLabel"
+            class="project-thumbnail"
+          >
 
-            <h3>
-              <span class="category">
-                Selected Project
+          <div class="project-content">
+
+            <div class="project-top">
+
+              <div>
+
+                <div class="project-category">
+                  Selected Project
+                </div>
+
+                <h3>
+                  RS-AutoLabel:
+                  Training-Free Open-Vocabulary Remote Sensing Auto-Labeling
+                </h3>
+
+              </div>
+
+              <span class="project-date">
+                Sep. 2025 — Jun. 2026
               </span>
 
-              RS-AutoLabel:
-              Training-Free Open-Vocabulary
-              Remote Sensing Auto-Labeling
-            </h3>
+            </div>
 
-            <span class="date">
-              Sep. 2025 — Jun. 2026
-            </span>
+            <div class="project-meta">
+              Capstone Design Project · SeoulTech
+            </div>
 
-          </div>
+            <p class="project-description">
+              Open-vocabulary auto-labeling with region consistency
+              refinement and exemplar prompting.
+            </p>
 
+            <div class="project-links">
 
-          <div class="research-meta">
-            Capstone Design Project · SeoulTech
-          </div>
+              <a href="projects/rs-autolabel.html">
+                Details →
+              </a>
 
-
-          <p class="research-description">
-            Developed an open-vocabulary remote sensing
-            auto-labeling system with region consistency refinement
-            and user-assisted exemplar prompting.
-          </p>
-
-
-          <div class="links">
-
-            <a href="projects/rs-autolabel.html">
-              Details →
-            </a>
+            </div>
 
           </div>
 
         </article>
 
 
+
         <!-- SPACE HACKATHON -->
 
-        <article class="research-item">
+        <article class="project-card">
 
-          <div class="research-header">
+          <img
+            src="assets/thumbnails/vlm-labeling.jpg"
+            alt="VLM-Based Interactive Object Labeling"
+            class="project-thumbnail"
+          >
 
-            <h3>
-              <span class="category">
-                Selected Project
+          <div class="project-content">
+
+            <div class="project-top">
+
+              <div>
+
+                <div class="project-category">
+                  Selected Project
+                </div>
+
+                <h3>
+                  Open-Vocabulary VLM-Based Interactive
+                  Object Labeling Automation System
+                </h3>
+
+              </div>
+
+              <span class="project-date">
+                Sep. 2025 — Nov. 2025
               </span>
 
-              Open-Vocabulary VLM-Based Interactive
-              Object Labeling Automation System
-            </h3>
+            </div>
 
-            <span class="date">
-              Sep. 2025 — Nov. 2025
-            </span>
+            <div class="project-meta">
+              2025 Space Hackathon ·
+              Korea Aerospace Research Institute (KARI)
+            </div>
 
-          </div>
+            <p class="project-description">
+              Interactive object labeling using
+              open-vocabulary vision-language models.
+            </p>
 
+            <div class="project-links">
 
-          <div class="research-meta">
-            2025 Space Hackathon ·
-            Korea Aerospace Research Institute (KARI)
-          </div>
+              <a href="projects/vlm-labeling.html">
+                Details →
+              </a>
 
-
-          <p class="research-description">
-            Developed an interactive object labeling automation
-            system using open-vocabulary vision-language models.
-          </p>
-
-
-          <div class="links">
-
-            <a href="projects/vlm-labeling.html">
-              Details →
-            </a>
+            </div>
 
           </div>
 
@@ -884,194 +1002,232 @@
 
         <!-- J-STARS -->
 
-        <article class="publication">
+        <article class="publication-card">
 
-          <div class="pub-title">
+          <img
+            src="assets/thumbnails/jstars.jpg"
+            alt="J-STARS Barn Detection"
+            class="publication-thumbnail"
+          >
 
-            A Deep Semantic Segmentation System for Detecting
-            Multi-Scale Barns of Diverse Livestock Breeds
-            in Satellite Imagery
+          <div class="publication-content">
 
-            <span class="badge">
-              Under Review
-            </span>
+            <div class="pub-title">
+              A Deep Semantic Segmentation System for Detecting
+              Multi-Scale Barns of Diverse Livestock Breeds
+              in Satellite Imagery
 
-          </div>
+              <span class="badge">
+                Under Review
+              </span>
+            </div>
 
+            <div class="pub-authors">
+              Yerang Lee*,
+              <span class="me">Youngmin Jeong*</span>,
+              Beom-Seok Oh,
+              Seonyoung Park,
+              and Eun Gyung Chung
+            </div>
 
-          <div class="pub-authors">
-            Yerang Lee*,
-            <span class="me">Youngmin Jeong*</span>,
-            Beom-Seok Oh,
-            Seonyoung Park,
-            and Eun Gyung Chung
-          </div>
+            <div class="pub-venue">
+              IEEE Journal of Selected Topics in Applied Earth
+              Observations and Remote Sensing (J-STARS), 2026
+            </div>
 
+            <div class="pub-links">
 
-          <div class="pub-venue">
-            IEEE Journal of Selected Topics in Applied Earth
-            Observations and Remote Sensing (J-STARS), 2026
-          </div>
+              <a href="projects/livestock-detection.html">
+                Project →
+              </a>
 
-
-          <div class="links">
-
-            <a href="projects/livestock-detection.html">
-              Project →
-            </a>
+            </div>
 
           </div>
 
         </article>
+
 
 
         <!-- GLCFormer -->
 
-        <article class="publication">
+        <article class="publication-card">
 
-          <div class="pub-title">
-            GLCFormer:
-            Improving Livestock Facility Detection
-            in Satellite Imagery Using Graph-Based
-            Land-Cover Information Fusion
-          </div>
+          <img
+            src="assets/thumbnails/glcformer.jpg"
+            alt="GLCFormer"
+            class="publication-thumbnail"
+          >
 
+          <div class="publication-content">
 
-          <div class="pub-authors">
-            <span class="me">
-              Youngmin Jeong
-            </span>
-            and Beom-Seok Oh
-          </div>
+            <div class="pub-title">
+              GLCFormer:
+              Improving Livestock Facility Detection in Satellite Imagery
+              Using Graph-Based Land-Cover Information Fusion
+            </div>
 
+            <div class="pub-authors">
+              <span class="me">
+                Youngmin Jeong
+              </span>
+              and Beom-Seok Oh
+            </div>
 
-          <div class="pub-venue">
-            Summer Annual Conference of the Institute
-            of Electronics and Information Engineers (IEIE), 2026
-          </div>
+            <div class="pub-venue">
+              Summer Annual Conference of IEIE, 2026
+            </div>
 
+            <div class="pub-links">
 
-          <div class="links">
+              <a href="projects/glcformer.html">
+                Details →
+              </a>
 
-            <a href="projects/glcformer.html">
-              Details →
-            </a>
+            </div>
 
           </div>
 
         </article>
+
 
 
         <!-- HeteroBarnMapper -->
 
-        <article class="publication">
+        <article class="publication-card">
 
-          <div class="pub-title">
+          <img
+            src="assets/thumbnails/heterobarnmapper.jpg"
+            alt="HeteroBarnMapper"
+            class="publication-thumbnail"
+          >
 
-            HeteroBarnMapper:
-            A Detection-to-Mapping System for
-            Heterogeneous Livestock Facilities
-            with Reliable Evaluation
+          <div class="publication-content">
 
-            <span class="badge">
-              Oral Presentation
-            </span>
+            <div class="pub-title">
+              HeteroBarnMapper:
+              A Detection-to-Mapping System for Heterogeneous
+              Livestock Facilities with Reliable Evaluation
 
-          </div>
+              <span class="badge">
+                Oral Presentation
+              </span>
+            </div>
 
+            <div class="pub-authors">
+              Yerang Lee*,
+              <span class="me">
+                Youngmin Jeong*
+              </span>,
+              and Beom-Seok Oh
+            </div>
 
-          <div class="pub-authors">
-            Yerang Lee*,
-            <span class="me">
-              Youngmin Jeong*
-            </span>,
-            and Beom-Seok Oh
-          </div>
+            <div class="pub-venue">
+              Summer Annual Conference of IEIE, 2025
+            </div>
 
+            <div class="pub-links">
 
-          <div class="pub-venue">
-            Summer Annual Conference of the Institute
-            of Electronics and Information Engineers (IEIE), 2025
-          </div>
+              <a
+                href="https://dbpia.co.kr/journal/articleDetail?nodeId=NODE12331355"
+                target="_blank"
+                rel="noopener"
+              >
+                DBpia →
+              </a>
 
-
-          <div class="links">
-
-            <a href="projects/heterobarnmapper.html">
-              Details →
-            </a>
+            </div>
 
           </div>
 
         </article>
+
 
 
         <!-- DualLCFormer -->
 
-        <article class="publication">
+        <article class="publication-card">
 
-          <div class="pub-title">
-            DualLCFormer:
-            Livestock Facility Detection using
-            a Dual Encoder Architecture
-            with Land Cover Fusion
-          </div>
+          <img
+            src="assets/thumbnails/duallcformer.jpg"
+            alt="DualLCFormer"
+            class="publication-thumbnail"
+          >
 
+          <div class="publication-content">
 
-          <div class="pub-authors">
+            <div class="pub-title">
+              DualLCFormer:
+              Livestock Facility Detection using a Dual Encoder
+              Architecture with Land Cover Fusion
+            </div>
 
-            <span class="me">
-              Youngmin Jeong*
-            </span>,
+            <div class="pub-authors">
 
-            Yerang Lee*,
-            and Beom-Seok Oh
+              <span class="me">
+                Youngmin Jeong*
+              </span>,
 
-          </div>
+              Yerang Lee*,
+              and Beom-Seok Oh
 
+            </div>
 
-          <div class="pub-venue">
-            Summer Annual Conference of the Institute
-            of Electronics and Information Engineers (IEIE), 2025
-          </div>
+            <div class="pub-venue">
+              Summer Annual Conference of IEIE, 2025
+            </div>
 
+            <div class="pub-links">
 
-          <div class="links">
+              <a
+                href="https://dbpia.co.kr/journal/articleDetail?nodeId=NODE12331974"
+                target="_blank"
+                rel="noopener"
+              >
+                DBpia →
+              </a>
 
-            <a href="projects/duallcformer.html">
-              Details →
-            </a>
+            </div>
 
           </div>
 
         </article>
 
 
+
         <!-- LCZ -->
 
-        <article class="publication">
+        <article class="publication-card">
 
-          <div class="pub-title">
-            Landsat 9 based Local Climate Zone Mapping
-            using CNN in Rome
-          </div>
+          <img
+            src="assets/thumbnails/lcz.jpg"
+            alt="Landsat 9 Local Climate Zone Mapping"
+            class="publication-thumbnail"
+          >
 
+          <div class="publication-content">
 
-          <div class="pub-authors">
+            <div class="pub-title">
+              Landsat 9 based Local Climate Zone Mapping
+              using CNN in Rome
+            </div>
 
-            <span class="me">
-              Youngmin Jeong
-            </span>,
+            <div class="pub-authors">
 
-            Kyungil Lee,
-            and Seonyoung Park
+              <span class="me">
+                Youngmin Jeong
+              </span>,
 
-          </div>
+              Kyungil Lee,
+              and Seonyoung Park
 
+            </div>
 
-          <div class="pub-venue">
-            Fall Annual Conference of the Korean Association
-            of Geographic Information Studies (KAGIS), 2022
+            <div class="pub-venue">
+              Fall Annual Conference of the Korean Association
+              of Geographic Information Studies (KAGIS), 2022
+            </div>
+
           </div>
 
         </article>
@@ -1101,10 +1257,6 @@
         💻 Course Projects
       </h2>
 
-      <p class="muted">
-        Selected projects completed as part of coursework at SeoulTech.
-      </p>
-
 
       <div class="course-grid">
 
@@ -1113,107 +1265,85 @@
 
         <article class="course-card">
 
-          <div class="course-index">
-            COURSE PROJECT 01
-          </div>
+          <img
+            src="assets/thumbnails/course-ml1.jpg"
+            alt="Machine Learning I Project"
+            class="course-thumbnail"
+          >
 
+          <div class="course-content">
 
-          <h3 class="placeholder">
-            Project Title
-          </h3>
+            <h3 class="placeholder">
+              Project Title
+            </h3>
 
+            <div class="course-name placeholder">
+              Machine Learning I · Year
+            </div>
 
-          <div class="course-name placeholder">
-            Course Name · Year
-          </div>
-
-
-          <p class="course-description placeholder">
-            Briefly describe the problem,
-            your approach,
-            and what you implemented.
-          </p>
-
-
-          <div class="course-links">
-
-            <a href="projects/course-project-01.html">
-              Details →
-            </a>
+            <p class="course-description placeholder">
+              One-line description of the project and its main approach.
+            </p>
 
           </div>
 
         </article>
+
 
 
         <!-- COURSE PROJECT 02 -->
 
         <article class="course-card">
 
-          <div class="course-index">
-            COURSE PROJECT 02
-          </div>
+          <img
+            src="assets/thumbnails/course-ml2.jpg"
+            alt="Machine Learning II Project"
+            class="course-thumbnail"
+          >
 
+          <div class="course-content">
 
-          <h3 class="placeholder">
-            Project Title
-          </h3>
+            <h3 class="placeholder">
+              Project Title
+            </h3>
 
+            <div class="course-name placeholder">
+              Machine Learning II · Year
+            </div>
 
-          <div class="course-name placeholder">
-            Course Name · Year
-          </div>
-
-
-          <p class="course-description placeholder">
-            Briefly describe the problem,
-            your approach,
-            and what you implemented.
-          </p>
-
-
-          <div class="course-links">
-
-            <a href="projects/course-project-02.html">
-              Details →
-            </a>
+            <p class="course-description placeholder">
+              One-line description of the project and its main approach.
+            </p>
 
           </div>
 
         </article>
 
 
+
         <!-- COURSE PROJECT 03 -->
 
         <article class="course-card">
 
-          <div class="course-index">
-            COURSE PROJECT 03
-          </div>
+          <img
+            src="assets/thumbnails/course-03.jpg"
+            alt="Course Project"
+            class="course-thumbnail"
+          >
 
+          <div class="course-content">
 
-          <h3 class="placeholder">
-            Project Title
-          </h3>
+            <h3 class="placeholder">
+              Project Title
+            </h3>
 
+            <div class="course-name placeholder">
+              Course Name · Year
+            </div>
 
-          <div class="course-name placeholder">
-            Course Name · Year
-          </div>
-
-
-          <p class="course-description placeholder">
-            Briefly describe the problem,
-            your approach,
-            and what you implemented.
-          </p>
-
-
-          <div class="course-links">
-
-            <a href="projects/course-project-03.html">
-              Details →
-            </a>
+            <p class="course-description placeholder">
+              One-line description of the project and its main approach.
+            </p>
 
           </div>
 
@@ -1238,7 +1368,6 @@
       <span>
         © 2026 Youngmin Jeong
       </span>
-
 
       <span>
 
@@ -1270,6 +1399,7 @@
     </div>
 
   </footer>
+
 
 </body>
 </html>
